@@ -46,10 +46,15 @@ const signIn = async (req, res) => {
                     error: "Something went wrong!"
                 }])
             }
-            if(result === true){
-                const token = generateToken(existingUser.id);
+            else if(result === true){
+                const token = generateToken({id: existingUser.id, username: existingUser.username});
                 res.status(200).setHeader('Authorization', `Bearer ${token}`).json([{
-                    message: "Token sent successfully!"
+                    message: `Token sent successfully!`
+                }])
+            }
+            else {
+                res.status(403).json([{
+                    error: "Password doesn't match!"
                 }])
             }
         })

@@ -1,19 +1,20 @@
 const jwt = require('jsonwebtoken')
 
-function generateToken(id){
-    const token = jwt.sign({id:id}, process.env.JWT_SECRET, {expiresIn: '30d'});
+function generateToken(payload){
+    const token = jwt.sign({payload}, process.env.JWT_SECRET, {expiresIn: '30d'});
     return token;
 }
 
 
 function authenticateToken(req, res, next) {
-    const token = req.header('Authorization');
+    let token = req.header('Authorization');
 
     if(!token) {
         return res.status(401).json([{
             error:"Token missing!"
         }]);
     }
+    token = token.split(" ")[1];
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
         if(err){
             return res.status(403).json([{
