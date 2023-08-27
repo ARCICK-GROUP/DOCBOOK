@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path')
 const compression = require('compression');
 const {authenticateToken} = require('./middlewares/JWT_authware')
 const cors = require('cors');
@@ -6,8 +7,13 @@ const sequelize = require('./models/database_connector');
 
 
 // Route imports
-const userSignin = require('./routes/signin.route')
-const searchEngine = require('./routes/search.route')
+
+// API ROUTES
+const userSignin = require('./routes/apis/signin.route')
+
+// APP ROUTES
+const AppPage = require('./routes/app/home.route')
+// const searchEngine = require('./routes/search.route')
 
 
 // config
@@ -16,14 +22,19 @@ const HOST = process.env.HOST || "0.0.0.0";
 const app = express();
 app.use(compression());
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use('/api/auth', authenticateToken);
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // routes & errorHandlers
 app.use('/api/user', userSignin);
-app.use('/api/auth/search', searchEngine);
+
+app.use('/app', AppPage);
+// app.use('/api/auth/search', searchEngine);
 
 
 app.use((err, req, res, next) => {

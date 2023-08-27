@@ -5,7 +5,7 @@ const {generateToken} = require('../middlewares/JWT_authware')
 
 
 const registerUser = async (req, res) => {
-    const {username, email, role, password, authorizer } = req.body;
+    const {username, email, role, password, registration } = req.body;
 
     try {
         const existingUser = await findUserByEmail(email);
@@ -15,7 +15,7 @@ const registerUser = async (req, res) => {
             }]);
         }
         // In future we need to add a varification method here to varify the auth data from govt.
-        await createUser({username, email, password, role, authorizer});
+        await createUser({username, email, password, role, registration});
         res.status(201).json([{
             message: "New user registered successfully!"
         }])

@@ -22,15 +22,11 @@ const User = sequelize.define(
                 isEmail: true,
             }
         },
-        role: {
-            type: DataTypes.ENUM('Doctor', 'Patient'),
-            allowNull: false,
-        },
         password: {
             type: DataTypes.STRING(200),
             allowNull: false,
         },
-        authorizer: {
+        registration: {
             type: DataTypes.STRING(50),
             allowNull: false,
         },
