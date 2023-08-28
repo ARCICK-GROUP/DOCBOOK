@@ -1,0 +1,44 @@
+name: Deploy App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      DBHOST: ${{ secrets.DBHOST }}
+      DBPORT: ${{ secrets.DBPORT }}
+      DBUSER: ${{ secrets.DBUSER }}
+      DBPASSWD: ${{ secrets.DBPASSWD }}
+      DBNAME: ${{ secrets.DBNAME }}
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build App
+        run: npm run build
+
+      - name: Deploy to Render
+        run: |
+          render deploy \
+            --env DBHOST=$DBHOST \
+            --env DBPORT=$DBPORT \
+            --env DBUSER=$DBUSER \
+            --env DBPASSWD=$DBPASSWD \
+            --env DBNAME=$DBNAME \
+            --env JWT_SECRET=$JWT_SECRET \
+            --env RENDER_API_KEY=$RENDER_API_KEY
