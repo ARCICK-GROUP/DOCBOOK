@@ -9,7 +9,7 @@ const sequelize = require('./models/database_connector');
 // Route imports
 
 // API ROUTES
-// const userSignin = require('./routes/apis/signin.route')
+const userSignin = require('./routes/apis/signin.route')
 const WPchat = require('./routes/apis/bot_msg.route')
 // APP ROUTES
 // const AppPage = require('./routes/app/home.route')
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // routes & errorHandlers
-// app.use('/api/user', userSignin);
+app.use('/api/authenticate/', userSignin);
 app.use('/api/chat', WPchat)
 
 // app.use('/app', AppPage);    

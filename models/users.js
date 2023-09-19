@@ -8,11 +8,11 @@ const Hospital = sequelize.define('Hospital', {
         allowNull: false,
     },
     latitude: {
-        type: DataTypes.FLOAT(10, 6),
+        type: DataTypes.FLOAT,
         allowNull: false,
     },
     longitude: {
-        type: DataTypes.FLOAT(10, 6),
+        type: DataTypes.FLOAT,
         allowNull: false,
     },
     registrationNumber: {
@@ -95,12 +95,20 @@ const Timetable = sequelize.define('Timetable', {
 const Patient = sequelize.define('Patient', {
     name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     PhoneNumber: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
+    },
+    latitude: {
+        type: DataTypes.FLOAT,
+        allowNull: true,
+    },
+    longitude: {
+        type: DataTypes.FLOAT,
+        allowNull: true,
     },
     id : {
         type: DataTypes.INTEGER,

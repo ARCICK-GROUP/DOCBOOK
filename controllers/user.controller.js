@@ -1,6 +1,5 @@
 const bcrypt = require('bcrypt');
 const { Hospital, Doctor, Patient, Timetable, Appointment } = require('../models/users');
-const { sequelize } = require('sequelize');
 const sequelize = require('../models/database_connector');
 
 
@@ -52,13 +51,28 @@ const CreatePatient = async (patientData) => {
     });
 }
 
+const UpdatePatient = async (latitude, longitude, PhoneNumber) => {
+    Patient.update(
+        {
+          latitude: latitude,
+          longitude: longitude,
+        },
+        {
+          where: { PhoneNumber:  PhoneNumber}, // Specify the condition to find the patient
+          returning: true, // This ensures that the updated record is returned
+        }
+      )
+        .catch((error) => {
+          console.error('Error updating patient record:', error);
+        });
+}
 
 const CreateAppointment = async (patientID, doctorID) => {
     const time = new Date();
     return await Appointment.create({
         time,
         PatientId: patientID,
-        DoctorId: doctorI,
+        DoctorId: doctorID,
 
     })
 }
@@ -114,4 +128,13 @@ const ExistingDoctor = async(reg) => {
     })
 }
 
-module.exports = { CreateDoctor, CreatePatient, CreateHospital, CreateTimeTable, FindDoctor};
+const ExistingPatient = async (mob_number) => {
+    return await Patient.findOne({
+        where: {PhoneNumber: mob_number}
+    })
+}
+
+module.exports = { CreateDoctor, CreatePatient, CreateHospital, 
+                CreateTimeTable, FindDoctor, CreateAppointment, ExistingPatient, ExistingHospital, ExistingDoctor,
+                UpdatePatient
+};

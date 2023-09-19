@@ -13,15 +13,15 @@
   },
   {
     "text": "Is there a hospital nearby?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Where is the nearest medical center?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "I'm looking for a clinic in this area",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the weather like today?",
@@ -37,11 +37,11 @@
   },
   {
     "text": "How can I reach the hospital from my location?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "I want to find a doctor nearby",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Is there a way to schedule an appointment online?",
@@ -49,7 +49,7 @@
   },
   {
     "text": "Tell me the nearest hospital's address",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can I make an appointment for tomorrow?",
@@ -57,11 +57,11 @@
   },
   {
     "text": "Is there a hospital open right now?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "How do I contact the nearest medical facility?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the procedure to book an appointment with a doctor?",
@@ -69,11 +69,11 @@
   },
   {
     "text": "Is there a clinic nearby that's open today?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can you recommend a nearby hospital?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Tell me about the doctor's availability",
@@ -81,11 +81,11 @@
   },
   {
     "text": "I need to find a hospital quickly",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "How's the traffic around the hospital area?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "I want to set up an appointment for next month",
@@ -101,11 +101,11 @@
   },
   {
     "text": "Tell me the directions to the nearest clinic",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Is there a hospital nearby that specializes in pediatrics?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "How's the weather looking for the weekend?",
@@ -117,7 +117,7 @@
   },
   {
     "text": "Is there an urgent care center around here?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Tell me about the availability of appointments this week",
@@ -129,7 +129,7 @@
   },
   {
     "text": "I'm feeling unwell; can you help me find a nearby hospital?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the weather like in the evening?",
@@ -141,7 +141,7 @@
   },
   {
     "text": "Where's the closest hospital from my location?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "I need a doctor's appointment as soon as possible",
@@ -149,7 +149,7 @@
   },
   {
     "text": "Is there a children's hospital nearby?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can I book an appointment with a female doctor?",
@@ -157,7 +157,7 @@
   },
   {
     "text": "I want to find the nearest medical facility",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "How's the weather forecast for next week?",
@@ -169,11 +169,11 @@
   },
   {
     "text": "Where can I find a hospital specializing in cardiology?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Tell me the address of the nearest medical clinic",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can you help me set up a meeting for next Monday?",
@@ -189,11 +189,11 @@
   },
   {
     "text": "Where can I get medical help in this area?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Is there a hospital nearby with emergency services?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can you recommend a doctor for me?",
@@ -201,11 +201,11 @@
   },
   {
     "text": "I need to find a hospital near my workplace",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the traffic like around the medical center?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can I schedule an appointment for next Tuesday?",
@@ -213,7 +213,7 @@
   },
   {
     "text": "Where's the closest urgent care clinic?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "I want to see a specialist; can you help me set up an appointment?",
@@ -221,11 +221,11 @@
   },
   {
     "text": "Tell me the directions to the nearest hospital",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Is there a hospital nearby that specializes in orthopedics?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the weather like today in the morning?",
@@ -237,7 +237,7 @@
   },
   {
     "text": "Where can I find a medical facility near my location?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can I book an appointment with a male doctor?",
@@ -245,7 +245,7 @@
   },
   {
     "text": "I'm searching for a nearby healthcare center",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the weather forecast for the next few days?",
@@ -257,11 +257,11 @@
   },
   {
     "text": "Is there a hospital nearby with a maternity ward?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Tell me the address of the nearest medical center",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can you help me schedule an appointment with a specialist?",
@@ -269,7 +269,7 @@
   },
   {
     "text": "Where can I find a hospital specializing in oncology?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the weather like today at night?",
@@ -285,11 +285,11 @@
   },
   {
     "text": "Where can I get medical assistance nearby?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Is there a hospital nearby that offers surgical services?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can you suggest a doctor for me?",
@@ -297,11 +297,11 @@
   },
   {
     "text": "I'm looking for a hospital close to my home",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the traffic situation around the medical facility?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can I set up an appointment for next Wednesday?",
@@ -309,7 +309,7 @@
   },
   {
     "text": "Where's the nearest urgent care center?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "I want to make an appointment with a cardiologist; can you help?",
@@ -317,11 +317,11 @@
   },
   {
     "text": "Tell me how to get to the nearest clinic",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Is there a hospital nearby that specializes in neurology?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the weather like today during the day?",
@@ -333,7 +333,7 @@
   },
   {
     "text": "Where can I find a medical center near my workplace?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can I book an appointment with a pediatrician?",
@@ -341,7 +341,7 @@
   },
   {
     "text": "I'm trying to locate a nearby healthcare facility",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the weather forecast for the next week?",
@@ -353,11 +353,11 @@
   },
   {
     "text": "Is there a hospital nearby with a radiology department?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Tell me the address of the nearest medical practice",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can you assist me in scheduling an appointment with a psychiatrist?",
@@ -365,7 +365,7 @@
   },
   {
     "text": "Where can I find a hospital specializing in gastroenterology?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the weather like today in the afternoon?",
@@ -377,7 +377,7 @@
   },
   {
     "text": "Where can I locate a medical center close to my location?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can I book an appointment with an ENT specialist?",
@@ -385,7 +385,7 @@
   },
   {
     "text": "I'm searching for a nearby medical facility",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the weather forecast for today in the evening?",
@@ -401,11 +401,11 @@
   },
   {
     "text": "Where can I get medical help near my workplace?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Is there a hospital nearby that offers emergency care?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can you recommend a physician for me?",
@@ -413,11 +413,11 @@
   },
   {
     "text": "I need to find a hospital near my home",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the traffic situation around the medical center?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Can I set up an appointment for next Thursday?",
@@ -425,7 +425,7 @@
   },
   {
     "text": "Where's the nearest walk-in clinic?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "I want to schedule an appointment with a dermatologist; can you help?",
@@ -433,11 +433,11 @@
   },
   {
     "text": "Tell me how to get to the nearest healthcare clinic",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "Is there a hospital nearby that specializes in ophthalmology?",
-    "intent": "finding nearby hospitals"
+    "intent": "quick listing"
   },
   {
     "text": "What's the weather like today at noon?",
