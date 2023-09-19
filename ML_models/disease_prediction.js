@@ -1,6 +1,6 @@
 const natural = require('natural');
 const dataset = require('../datasets/medical_diagnosis_dataset.json');
-const classifier = new natural.BayesClassifier();
+const prediction_classifier = new natural.BayesClassifier();
 
 dataset.forEach((data) => {
     const symptoms = Object.keys(data)
@@ -8,11 +8,11 @@ dataset.forEach((data) => {
     const disease = data.prognosis;
   
     if (symptoms.length > 0) {
-      classifier.addDocument(symptoms.join(','), disease);
+      prediction_classifier.addDocument(symptoms.join(','), disease);
     }
   });
 
-classifier.train();
+prediction_classifier.train();
 
 
-module.exports = {classifier};
+module.exports = {prediction_classifier};

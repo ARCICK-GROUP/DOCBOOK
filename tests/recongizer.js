@@ -1,4 +1,4 @@
-const {classifier} = require("../controllers/intent_recognizer.controller")
+const {intent_classifier} = require("../ML_models/intent_recognition")
 // Test the classifier
 const testData = [
   "Can I book an appointment for next week?",
@@ -11,6 +11,6 @@ const testData = [
 ];
 
 testData.forEach((query) => {
-  const intent = classifier.classify(query);
+  const intent = intent_classifier.classify(query);
   console.log(`Query: "${query}" => Intent: ${intent}`);
 });

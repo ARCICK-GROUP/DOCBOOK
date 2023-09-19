@@ -11,14 +11,19 @@ function getReplyForMessage(message) {
   }
 
 const whatsappBot = async (req, res) => {
+  try {
     const twiml = new MessagingResponse();
     const incomingMessage = req.body.Body.toLowerCase();
     const replyMessage = getReplyForMessage(incomingMessage);
-
-  twiml.message(replyMessage);
-
-  res.writeHead(200, { 'Content-Type': 'text/xml' });
-  res.end(twiml.toString());
+  
+    twiml.message(replyMessage);
+  
+    res.writeHead(200, { 'Content-Type': 'text/xml' });
+    res.end(twiml.toString());
+  } catch (error) {
+    console.error('Error handling WhatsApp message:', error);
+    res.status(500).send('Internal Server Error');
+  }
 
 }
 
