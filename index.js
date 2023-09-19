@@ -9,10 +9,10 @@ const sequelize = require('./models/database_connector');
 // Route imports
 
 // API ROUTES
-const userSignin = require('./routes/apis/signin.route')
-
+// const userSignin = require('./routes/apis/signin.route')
+const WPchat = require('./routes/apis/bot_msg.route')
 // APP ROUTES
-const AppPage = require('./routes/app/home.route')
+// const AppPage = require('./routes/app/home.route')
 // const searchEngine = require('./routes/search.route')
 
 
@@ -22,7 +22,7 @@ const HOST = process.env.HOST || "0.0.0.0";
 const app = express();
 app.use(compression());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use('/api/auth', authenticateToken);
 app.set('view engine', 'ejs');
@@ -31,9 +31,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // routes & errorHandlers
-app.use('/api/user', userSignin);
+// app.use('/api/user', userSignin);
+app.use('/api/chat', WPchat)
 
-app.use('/app', AppPage);
+// app.use('/app', AppPage);    
 // app.use('/api/auth/search', searchEngine);
 
 

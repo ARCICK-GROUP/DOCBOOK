@@ -1,11 +1,11 @@
-const { createDoctor, createPatient, findDoctorByEmail, findPatientByEmail } = require('./user.controller');
+const { CreateDoctor, CreateHospital } = require('./user.controller');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const {generateToken} = require('../middlewares/JWT_authware')
 
 
-const registerDoctor = async (req, res) => {
-    const {username, email, role, password, registration } = req.body;
+const RegisterHospital = async (req, res) => {
+    const {name, lat, long, password, registration } = req.body;
 
     try {
         const existingUser = await findDoctorByEmail(email);
