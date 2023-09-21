@@ -34,7 +34,7 @@ const CreateHospital = async (HospitalData) => {
 const CreateDoctor = async (DoctorData, HID) => {
     return await Doctor.create({
         ...DoctorData, 
-        HospitalId: HID
+        HospitalRegistrationNumber: HID
     });
 }
 
@@ -58,7 +58,7 @@ const UpdatePatient = async (latitude, longitude, PhoneNumber) => {
           longitude: longitude,
         },
         {
-          where: { PhoneNumber:  PhoneNumber}, // Specify the condition to find the patient
+          where: { PhoneNumber:  PhoneNumber},
           returning: true, // This ensures that the updated record is returned
         }
       )
@@ -128,6 +128,13 @@ const ExistingDoctor = async(reg) => {
     })
 }
 
+const DocBySpec = async(spec) => {
+    return await Doctor.findAll({
+        where: {speciality: spec},
+        include: Hospital,
+    })
+}
+
 const ExistingPatient = async (mob_number) => {
     return await Patient.findOne({
         where: {PhoneNumber: mob_number}
@@ -136,5 +143,5 @@ const ExistingPatient = async (mob_number) => {
 
 module.exports = { CreateDoctor, CreatePatient, CreateHospital, 
                 CreateTimeTable, FindDoctor, CreateAppointment, ExistingPatient, ExistingHospital, ExistingDoctor,
-                UpdatePatient
+                UpdatePatient, DocBySpec
 };

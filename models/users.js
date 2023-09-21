@@ -1,42 +1,42 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('./database_connector');
 
-
-const Hospital = sequelize.define('Hospital', {
+class Hospital extends Model {}
+Hospital.init(
+  {
     name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     latitude: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
+      type: DataTypes.FLOAT,
+      allowNull: false,
     },
     longitude: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
+      type: DataTypes.FLOAT,
+      allowNull: false,
     },
     registrationNumber: {
-        type: DataTypes.STRING,
-        primaryKey: true,
-        allowNull: false,
-        unique: true,
+      type: DataTypes.STRING,
+      primaryKey: true,
+      allowNull: false,
+      unique: true,
     },
     password: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
-    updatedAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    }
-});
+  },
+  {
+    sequelize,
+    modelName: 'Hospital',
+    timestamps: true,
+  }
+);
 
-
-const Doctor = sequelize.define('Doctor', {
+class Doctor extends Model {}
+Doctor.init(
+  {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -51,18 +51,17 @@ const Doctor = sequelize.define('Doctor', {
       allowNull: false,
       unique: true,
     },
-    createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
-    updatedAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    }
-});
+  },
+  {
+    sequelize,
+    modelName: 'Doctor',
+    timestamps: true,
+  }
+);
 
-
-const Timetable = sequelize.define('Timetable', {
+class Timetable extends Model {}
+Timetable.init(
+  {
     dayOfWeek: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -75,80 +74,66 @@ const Timetable = sequelize.define('Timetable', {
       type: DataTypes.TIME,
       allowNull: false,
     },
-    id : {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-    },
-    createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
-    updatedAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    }
-});
+  },
+  {
+    sequelize,
+    modelName: 'Timetable',
+    timestamps: true,
+  }
+);
 
-
-const Patient = sequelize.define('Patient', {
+class Patient extends Model {}
+Patient.init(
+  {
     name: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: true,
     },
-    PhoneNumber: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
+    phoneNumber: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
     },
     latitude: {
-        type: DataTypes.FLOAT,
-        allowNull: true,
+      type: DataTypes.FLOAT,
+      allowNull: true,
     },
     longitude: {
-        type: DataTypes.FLOAT,
-        allowNull: true,
+      type: DataTypes.FLOAT,
+      allowNull: true,
     },
-    id : {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-    },
-    createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
-    updatedAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    }
-})
+  },
+  {
+    sequelize,
+    modelName: 'Patient',
+    timestamps: true,
+  }
+);
 
-const Appointment = sequelize.define('Appointment', {
+class Appointment extends Model {}
+Appointment.init(
+  {
     appointmentTime: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        primaryKey: true,
+      type: DataTypes.DATE,
+      allowNull: false,
+      primaryKey: true,
     },
-    createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
-    updatedAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    }
-});
+  },
+  {
+    sequelize,
+    modelName: 'Appointment',
+    timestamps: true,
+  }
+);
 
-Hospital.hasMany(Doctor);
-Doctor.belongsTo(Hospital);
+// Define associations
+Hospital.hasMany(Doctor, { foreignKey: 'HospitalRegistrationNumber' });
+Doctor.belongsTo(Hospital, { foreignKey: 'HospitalRegistrationNumber' });
 
 Doctor.hasMany(Timetable);
 Timetable.belongsTo(Doctor);
 
 Patient.hasMany(Appointment);
-Doctor.hasMany(Appointment)
+Doctor.hasMany(Appointment);
 
-module.exports = {Hospital, Doctor, Timetable, Patient, Appointment}
+module.exports = { Hospital, Doctor, Timetable, Patient, Appointment };

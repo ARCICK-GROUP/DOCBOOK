@@ -490,5 +490,9 @@
   {
     "text": "What's the ideal diet for managing diabetes?",
     "intent": "misc"
+  },
+  {
+    "text": "book my appointment to my doctor, i'm having symptoms :nausea,vomiting",
+    "intent":"appointment"
   }
 ]
