@@ -45,7 +45,8 @@ __I am developed by ARCICK GROUP, a team of young developers who want to make ou
 
     } else if(intent === "appointment"){
       const symptoms = incomingMessage.split(":")[1].split(" ");
-      const disease = prediction_classifier.classify(symptoms);
+      const symptomsStr = symptoms.join(',');
+      const disease = prediction_classifier.classify(symptomsStr);
       console.log(disease)
 
       let spec = "MD"
