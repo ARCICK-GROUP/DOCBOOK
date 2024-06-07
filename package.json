@@ -1,0 +1,30 @@
+{
+  "name": "docbook",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "compression": "^1.7.4",
+    "compromise": "^14.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-rate-limiter": "^1.3.1",
+    "jsonwebtoken": "^9.0.1",
+    "mysql2": "^3.6.0",
+    "natural": "^6.7.2",
+    "sequelize": "^6.32.1",
+    "twilio": "^4.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
